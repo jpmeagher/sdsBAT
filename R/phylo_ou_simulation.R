@@ -13,6 +13,8 @@
 #'   phylogenetic tree.
 #'
 #' @examples  K <- pou_cov(log(c(1,20,1)), phylogeny)
+#'
+#' @export
 pou_covariance <- function(ln_hyperparameters, phylogenetic_tree){
   if(length(ln_hyperparameters) != 3){
     stop("Hyperparameters for phylogenetic noise, phylogenetic length-scale and non-phylogenetic noise must be included.")
@@ -46,12 +48,14 @@ pou_covariance <- function(ln_hyperparameters, phylogenetic_tree){
 #'
 #' Simulated Realisations of a Phylogenetic Ornstein-Uhlenbeck Process
 #'
-#' @inheritParams phylo_ou_cov
+#' @inheritParams pou_covariance
 #' @param nsamples The number of samples to be simulated.
 #'
 #' @return Outputs a matrix of size \eqn{ntips x nsamples} containing
 #'   \eqn{nsamples} simulations from a given Phylogenetic Ornstein-Uhlenbeck
 #'   Gaussian Process.
+#'
+#' @export
 pou_simulated_data <- function(ln_hyperparameters, phylogenetic_tree, n_samples){
 
   K <- pou_covariance(ln_hyperparameters, phylogenetic_tree)

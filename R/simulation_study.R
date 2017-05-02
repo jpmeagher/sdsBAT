@@ -5,13 +5,15 @@
 #' hyperparameters
 #'
 #' @inheritParams pou_covariance
-#' @inheritParams pou_simulatied_data
+#' @inheritParams pou_simulated_data
 #' @inheritParams pou_type2mle
 #'
 #' @return A \eqn{4 x n_samples} matrix. Hyperparameters are ordered in the rows
 #'   as (phylogenetic noise, phylogenetic length-scale, non-phylogenetic noise).
 #'   Each column is a separate sample.
-pou_simulation_study <- function(ln_hyperparameters, phylogenetic_tree, n_samples, logl_function = pou_logl_slow, optim_function = 'optim', optim_method = 'CG', lower_initialisation = c(0,0,0), upper_initialisation = c(1,1,1), n_restarts = 1){
+#'
+#' @export
+pou_simulation_study <- function(ln_hyperparameters, phylogenetic_tree, n_samples, logl_function = pou_logl_slow, optim_function = 'optim', optim_method = 'Nelder-Mead', lower_initialisation = c(0,0,0), upper_initialisation = c(1,1,1), n_restarts = 1){
 
   S <- pou_simulated_data(ln_hyperparameters, phylogenetic_tree, n_samples)
 

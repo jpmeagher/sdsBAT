@@ -11,6 +11,16 @@ P. Z. Hadjipantelis, N. S. Jones, J. Moriarty, D. A. Springate, and
 \usage{
 pou_logl_fast(ln_hyperparameters, phylogenetic_tree, observations)
 }
+\arguments{
+\item{ln_hyperparameters}{Vector of the natural logarithm of hyperparameters
+for an Ornstein-Uhlenbeck kernel in order \eqn{log(phylogenetic noise,
+phylogenetic length-scale, non-phylogenetic noise)}}
+
+\item{phylogenetic_tree}{Phylogenetic tree of relationships between
+observations}
+
+\item{observations}{Observations from the tips of the phylogenetic tree}
+}
 \value{
 A positive value which is the negative log likelihood for the data.
 }

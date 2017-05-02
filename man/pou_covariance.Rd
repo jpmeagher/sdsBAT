@@ -24,4 +24,5 @@ Gaussian Process given the Ornsetin-Uhelenbeck process kernel.
 }
 \examples{
  K <- pou_cov(log(c(1,20,1)), phylogeny)
+
 }

@@ -7,13 +7,20 @@
 pou_logl_slow(ln_hyperparameters, phylogenetic_tree, observations)
 }
 \arguments{
-\item{dat}{Observations from the tips of the phylogenetic tree}
+\item{ln_hyperparameters}{Vector of the natural logarithm of hyperparameters
+for an Ornstein-Uhlenbeck kernel in order \eqn{log(phylogenetic noise,
+phylogenetic length-scale, non-phylogenetic noise)}}
+
+\item{phylogenetic_tree}{Phylogenetic tree of relationships between
+observations}
+
+\item{observations}{Observations from the tips of the phylogenetic tree}
 }
 \value{
 A positive value which is the negative log likelihood for the data.
 }
 \description{
-Calculates the Phylogenetic Ornsetin-Uhelenbeck Process negative log
+Calculates the Phylogenetic Ornstein-Uhelenbeck Process negative log
 likelihood, given the process hyperparameters, a phylogenetic tree, and some
 data.
 }

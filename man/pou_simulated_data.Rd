@@ -7,6 +7,13 @@
 pou_simulated_data(ln_hyperparameters, phylogenetic_tree, n_samples)
 }
 \arguments{
+\item{ln_hyperparameters}{Vector of the natural logarithm of hyperparameters
+for an Ornstein-Uhlenbeck kernel in order \eqn{log(phylogenetic noise,
+phylogenetic length-scale, non-phylogenetic noise)}}
+
+\item{phylogenetic_tree}{Phylogenetic tree of relationships between
+observations}
+
 \item{nsamples}{The number of samples to be simulated.}
 }
 \value{

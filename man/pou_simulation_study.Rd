@@ -6,7 +6,7 @@
 \usage{
 pou_simulation_study(ln_hyperparameters, phylogenetic_tree, n_samples,
   logl_function = pou_logl_slow, optim_function = "optim",
-  optim_method = "CG", lower_initialisation = c(0, 0, 0),
+  optim_method = "Nelder-Mead", lower_initialisation = c(0, 0, 0),
   upper_initialisation = c(1, 1, 1), n_restarts = 1)
 }
 \arguments{
