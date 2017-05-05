@@ -102,7 +102,7 @@ smooth_and_regularise_call_densities <- function(spectral_densities = log_spectr
 #' @export
 rescale_density <- function(spectral_density){
   minimum_value <- min(spectral_density)
-  scaled_curve <- spectral_density + minimum_value
+  scaled_curve <- spectral_density - minimum_value
   new_maximum <- max(scaled_curve)
   scaled_curve <- scaled_curve / new_maximum
 
