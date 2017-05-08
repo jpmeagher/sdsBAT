@@ -19,7 +19,7 @@
 #' @return Vector of optimised hyperparameters and the corresponding negative
 #'   log likelihood, in order (phylogenetic noise, phylogenetic length-scale,
 #'   non-phylogenetic noise, negative log likelihood)
-pou_type2mle <- function(phylogenetic_tree, observations, logl_function = pou_logl_slow, optim_function = 'optim', optim_method = 'Nelder-Mead', lower_initialisation = c(0,0,0), upper_initialisation = c(1,1,1), n_restarts = 1){
+pou_type2mle <- function(observations, phylogenetic_tree, logl_function = pou_logl_slow, optim_function = 'optim', optim_method = 'Nelder-Mead', lower_initialisation = c(0,0,0), upper_initialisation = c(1,1,1), n_restarts = 1){
 
   output <- rep(Inf, 4)
   names(output) <= c('sp', 'l', 'sn', 'ml')

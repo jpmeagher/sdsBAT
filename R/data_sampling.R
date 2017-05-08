@@ -37,3 +37,27 @@ balanced_samples <- function(df = calls, categorical_variable = calls$species, i
 
   return(samples)
 }
+
+#' Sample of Species Mean Estimates
+#' @export
+get_mean_estimates <- function(df = smooth_and_regularise_call_densities(), samples_per_mean = 4, n_mean_estimates = 4){
+  temp_sample <- balanced_samples(df, individuals_per_category = n_mean_estimates, n_samples = samples_per_mean)
+  full_sample <- array(unlist(temp_sample), dim = c(length(temp_sample[[1]][[1]]), dim(temp_sample)))
+  colnames(full_sample) <- rownames(temp_sample)
+  mean_estimate <- apply(full_sample, c(1,2), mean)
+
+  return(mean_estimate)
+}
+
+#' Resampled estimates of Species mean
+#' @export
+sample_mean_estimates <- function(df = smooth_and_regularise_call_densities(), samples_per_mean = 4, n_mean_estimates = 4, n_samples = 10){
+  temp_sample <- get_mean_estimates(df, samples_per_mean, n_mean_estimates)
+  full_sample <- array(NA, dim = c(dim(temp_sample), n_samples))
+  colnames(full_sample) <- colnames(temp_sample)
+  for(i in 1:n_samples){
+    full_sample[,,i] <- get_mean_estimates(df, samples_per_mean, n_mean_estimates)
+  }
+
+  return(full_sample)
+}

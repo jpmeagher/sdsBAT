@@ -38,3 +38,16 @@
 #' @source A. Collen. The evolution of echolocation in bats: a comparative
 #'   approach. PhD thesis, UCL (University College London) (2012).
 'phylogeny'
+
+#' Spectral Components
+#'
+#' Approximate Functional Principal Components of the Bat Echolocation Call
+#' Energy Spectral Densities obtained by a resampling of call datasets balanced
+#' by both species and individual and grouping components by peak frequency.
+'spectral_fpca'
+
+#'Spectral Mean of Bat Echolocation Calls
+#'
+#'Approximate mean Energy Spectral density for Bat Echolocation calls generated
+#'by a resampling of call datasets balanced by both species and individual.
+'spectral_mean'
