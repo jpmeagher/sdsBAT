@@ -62,7 +62,7 @@ pou_simulated_data <- function(ln_hyperparameters, phylogenetic_tree, n_samples)
   ntips <- length(phylogenetic_tree$tip.label)
   C <- chol(K)
 
-  simulated_data <- C%*%matrix(rnorm(ntips*n_samples, 0, 1), nrow = ntips, ncol = n_samples)
+  simulated_data <- t(C)%*%matrix(rnorm(ntips*n_samples, 0, 1), nrow = ntips, ncol = n_samples)
 
   return(simulated_data)
 }

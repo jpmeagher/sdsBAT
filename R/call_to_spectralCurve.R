@@ -10,7 +10,7 @@
 log_spectral_density <- function(signal){
   N <- length(signal)
   spectrum <- fft(signal)
-  magnitude_spectrum <- (abs(spectrum[1:(floor(N/2)+1)])^2) / N
+  magnitude_spectrum <- (abs(spectrum[1:(floor(N/2)+1)])^2) * (500000 / N)
   log_density <- log10(magnitude_spectrum)
 
   return(log_density)

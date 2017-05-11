@@ -51,3 +51,9 @@
 #'Approximate mean Energy Spectral density for Bat Echolocation calls generated
 #'by a resampling of call datasets balanced by both species and individual.
 'spectral_mean'
+
+#' Simulated Data Hyperparameter Estimates
+'hyperparameter_estimates_simulation'
+
+#' Hyperparameter estimates for Bat Echolocation
+'bat_hyperparameter_estimates'
