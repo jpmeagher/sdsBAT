@@ -4,16 +4,16 @@
 \alias{pou_type2mle}
 \title{Hyperparameter Estimation}
 \usage{
-pou_type2mle(phylogenetic_tree, observations, logl_function = pou_logl_slow,
+pou_type2mle(observations, phylogenetic_tree, logl_function = pou_logl_slow,
   optim_function = "optim", optim_method = "Nelder-Mead",
   lower_initialisation = c(0, 0, 0), upper_initialisation = c(1, 1, 1),
   n_restarts = 1)
 }
 \arguments{
+\item{observations}{Observations from the tips of the phylogenetic tree}
+
 \item{phylogenetic_tree}{Phylogenetic tree of relationships between
 observations}
-
-\item{observations}{Observations from the tips of the phylogenetic tree}
 
 \item{logl_function}{function calculating the negative log likelihood of the
 observations to be minimised. Either 'pou_logl_slow' or 'pou_logl_fast'.}
@@ -35,6 +35,7 @@ to generate initial values.}
 Vector of optimised hyperparameters and the corresponding negative
   log likelihood, in order (phylogenetic noise, phylogenetic length-scale,
   non-phylogenetic noise, negative log likelihood)
+  @export
 }
 \description{
 Type II Maximum Likelihood Estimation for hyperparameters of a Phylogenetic

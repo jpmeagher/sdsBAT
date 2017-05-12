@@ -63,6 +63,7 @@ pou_simulated_data <- function(ln_hyperparameters, phylogenetic_tree, n_samples)
   C <- chol(K)
 
   simulated_data <- t(C)%*%matrix(rnorm(ntips*n_samples, 0, 1), nrow = ntips, ncol = n_samples)
+  rownames(simulated_data) <- phylogenetic_tree$tip.label
 
   return(simulated_data)
 }
