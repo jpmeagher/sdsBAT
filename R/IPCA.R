@@ -44,16 +44,16 @@ cubica34 <- function(x){
         u1=(u[1,])
         u2=(u[2,])
 
-        C111=(sq1%*%u1)/P;
-        C112=(sq1%*%u2)/P;
-        C122=(sq2%*%u1)/P;
-        C222=(sq2%*%u2)/P;
+        C111=c(sq1%*%u1)/P;
+        C112=c(sq1%*%u2)/P;
+        C122=c(sq2%*%u1)/P;
+        C222=c(sq2%*%u2)/P;
 
-        C1111=(sq1%*%t(sq1))/P -3;
-        C1112=(sq1*t(u1))%*%u2 /P;
-        C1122=sq1%*%t(sq2)/P -1;
-        C1222=(sq2*t(u2))%*%u1 /P;
-        C2222=sq2%*%t(sq2)/P -3;
+        C1111=c(sq1%*%t(sq1))/P -3;
+        C1112=c((sq1*t(u1))%*%u2) /P;
+        C1122=c(sq1%*%t(sq2))/P -1;
+        C1222=c((sq2*t(u2))%*%u1) /P;
+        C2222=c(sq2%*%t(sq2))/P -3;
 
         # coefficients
 
@@ -77,9 +77,9 @@ cubica34 <- function(x){
 
         #calculating the angle
 
-        approx=-phi_4/4-(pi/2)*trunc(-phi_4/pi);
+        approx=c(-phi_4/4-(pi/2)*trunc(-phi_4/pi));
 
-        intervall <- seq( (approx-pi/8), (approx+pi/8) , resolution )
+        intervall <- seq( (approx-pi/8), (approx+pi/8) , by = resolution )
 
         psi_34=B_8*cos(8*intervall+phi_8)+B_4*cos(4*intervall+phi_4);
 
